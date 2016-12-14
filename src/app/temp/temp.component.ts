@@ -19,13 +19,17 @@ export class TempComponent implements OnInit{
   Celcius : number = 0;
   Fahrenheit : number = 0;
 
+  count : number =0;
 
-  CelciusToFahrenheit() {
+
+  CelciusToFahrenheit(event: KeyboardEvent) {
     this.Fahrenheit = this.Celcius * 9/5 + 32;
+    this.count = this.count + 1;
   }
 
-  fahrenheitToCelcius() {
+  fahrenheitToCelcius(event: KeyboardEvent) {
     this.Celcius= this.Fahrenheit - 32 * 5/9
+    this.count = this.count + 1;
   }
 
   ngOnInit() {

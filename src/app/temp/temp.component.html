@@ -5,13 +5,19 @@
 
   <form name="convert">
     <div class="form-group">
-      <label for="Celcius">Celcius:</label>
-      <input [(ngModel)]="Celcius" name="Celcius" (keyup.enter)=" CelciusToFahrenhet()" type="number" step="any" class="form-control" placeholder="Enter a number">
+      <label class="control-label" for="Celcius">Celcius</label>
+      <div class="textbox">
+        <input value="{{Celcius}}" type="text" class="from-control" name="Celcius" id="Celcius" (keyup)="CelciusToFahrenheit($event)"
+          placeholder="Enter a number">
+
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="Fahrenheit">Fahrenheit:</label>
-      <input [(ngModel)]="Fahrenheit" name="Fahrenheit" (keyup.enter)=" fahrenthetToCelcius()" type="number" step="any" class="form-control" placeholder="Enter a number">   
+      <label class="control-label" for="Fahrenheit">Fahrenheit</label>
+      <div class="textbox">
+        <input value="{{Fahrenheit}}" type="text" class="from-control" name="Fahrenheit" id="Fahrenheit" (keyup)="fahrenheitToCelcius($event)" placeholder="Enter a number">
+      </div>
     </div>
 
     <div>
@@ -20,6 +26,6 @@
   </form>
 
   <div class="conversions">
-    <p>Total Conversions: 10</p>
+    <p>Total Conversions: {{count}}</p>
   </div>
 </section>
